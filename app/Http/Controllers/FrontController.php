@@ -110,4 +110,21 @@ class FrontController extends Controller
             'banner_ads'
         ));
     }
+
+    public function author(Author $author)
+    {
+        $categories = Category::all();
+
+        $banner_ads = BannerAdvertisment::where('is_active', 'active')
+            ->where('type', 'banner')
+            ->inRandomOrder()
+            // ->take(1)
+            ->first();
+
+        return view('front.author', compact(
+            'author',
+            'categories',
+            'banner_ads'
+        ));
+    }
 }
