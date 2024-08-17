@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html>
+@extends('front.master')
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="{{ asset('output.css') }}" rel="stylesheet" />
-    <link href="{{ asset('main.css') }}" rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
-		rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-
+@section('content')
 <body class="font-[Poppins] pb-[83px]">
 	<x-navbar />
 	<nav id="Category" class="max-w-[1130px] mx-auto flex justify-center items-center gap-4 mt-[30px]">
@@ -75,5 +65,8 @@
 		</div>
 	</section>
 </body>
+@endsection
 
-</html>
+@push('after-script')
+	<script src="https://cdn.tailwindcss.com"></script>
+@endpush
