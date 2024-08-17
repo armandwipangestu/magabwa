@@ -1,0 +1,94 @@
+/* width */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(238, 240, 247, 1); 
+    border: solid 2.5px white;
+}
+
+/* Handle */
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 107, 24, 1);
+    border-radius: 3px;
+}
+
+/* Handle on hover */
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 107, 24, 1); 
+}
+
+#Content-wrapper{
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 34px;
+
+    font-family: 'Lexend Deca';
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#Content-wrapper ul
+{
+    list-style: unset;
+    margin: unset;
+    padding: 0 0 0 30px;
+}
+
+#Content-wrapper li
+{
+    display: list-item;
+}
+
+#Content-wrapper p strong{
+    font-weight: 600;
+}
+
+#Content-wrapper h1, #Content-wrapper h2, #Content-wrapper h3, #Content-wrapper h4, #Content-wrapper h5, #Content-wrapper h6 {
+    font-weight: 700;
+    font-size: unset;
+} 
+
+#Content-wrapper h2{
+    font-size: 40px;
+    line-height: 34px;
+}
+
+#Content-wrapper h2{
+    font-size: 32px;
+    line-height: 34px;
+}
+
+#Content-wrapper h3{
+    font-size: 26px;
+    line-height: 34px;
+}
+
+#Content-wrapper ins{
+    color: #FF6B18;
+}
+
+#Content-wrapper a{
+    color: #FF6B18;
+}
+
+#Content-wrapper a:hover{
+    text-decoration: underline;
+}
+
+#Content-wrapper figure{
+    max-width: 600px;
+    max-height: 350px;
+    overflow: hidden;
+}
+
+#Content-wrapper figure img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: left;
+    border-radius: 20px;
+}
