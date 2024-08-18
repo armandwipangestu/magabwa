@@ -147,4 +147,29 @@ class FrontController extends Controller
             'categories'
         ));
     }
+
+    public function details(ArticleNews $article_news)
+    {
+        $categories = Category::all();
+
+        $articles = ArticleNews::with(['category'])
+            ->where('is_featured', 'not_featured')
+            ->where('id', '!=', $article_news->id)
+            ->latest()
+            ->take(3)
+            ->get();
+
+        $banner_ads = BannerAdvertisment::where('is_active', 'active')
+            ->where('type', 'banner')
+            ->inRandomOrder()
+            // ->take(1)
+            ->first();
+
+        return view('front.details', compact(
+            'article_news',
+            'categories',
+            'articles',
+            'banner_ads'
+        ));
+    }
 }
