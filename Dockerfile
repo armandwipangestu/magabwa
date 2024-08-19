@@ -25,10 +25,10 @@ RUN apt-get update && apt-get -y install apt-utils nano wget dialog vim && apt-g
 #     && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
 #     && docker-php-ext-install pdo pdo_pgsql pgsql
 
-COPY . /var/www/magabwa
+COPY . /var/www/magabwa.com
 
-RUN chown -R www-data:www-data /var/www/magabwa
-RUN chmod -R 755 /var/www/magabwa/storage
-RUN chmod -R 755 /var/www/magabwa/bootstrap/cache
+RUN chown -R www-data:www-data /var/www/magabwa.com
+RUN chmod -R 755 /var/www/magabwa.com/storage
+RUN chmod -R 755 /var/www/magabwa.com/bootstrap/cache
 
 CMD ["php-fpm"]

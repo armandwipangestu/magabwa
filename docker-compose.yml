@@ -7,11 +7,11 @@ services:
             dockerfile: Dockerfile
         ports:
             - "9000:9000"
-        working_dir: "/var/www/magabwa"
+        working_dir: "/var/www/magabwa.com"
         environment:
             DB_HOST: "db"
         volumes:
-            - "./:/var/www/magabwa"
+            - "./:/var/www/magabwa.com"
         depends_on:
             - db
 
