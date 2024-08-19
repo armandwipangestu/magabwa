@@ -333,6 +333,12 @@ docker compose exec app php artisan key:generate
 docker compose exec app php artisan migrate:fresh --seed
 ```
 
+4. Create symbolic link for `/storage/app/pubic` to `/public`
+
+```bash
+docker compose exec app php artisan storage:link
+```
+
 Now you can access the application with your own domain
 
 > **NOTE**: If you got an error because permission denied at directory `/var/www/magabwa/storage` and `/var/www/magabwa/bootstrap/cache`. You can run this command
@@ -353,7 +359,7 @@ sudo apt update && sudo apt upgrade
 #### Install necessary package
 
 ```bash
-sudo apt install php-mbstring php-xml php-bcmath php-curl php-cli php-fpm php-mysql unzip mariadb-server
+sudo apt install php-mbstring php-xml php-bcmath php-curl php-cli php-fpm php-mysql php-intl php-zip unzip mariadb-server
 ```
 
 #### Install composer
@@ -419,19 +425,25 @@ php artisan key:generate
 php artisan migrate:fresh --seed
 ```
 
-4. Copy or move project to `/var/www/magabwa`
+4. Create symbolic link for `/storage/app/pubic` to `/public`
+
+```bash
+php artisan storage:link
+```
+
+5. Copy or move project to `/var/www/magabwa`
 
 ```bash
 sudo cp -R ~/magabwa /var/www/magabwa
 ```
 
-5. Change the user and group owner permission to `www-data`
+6. Change the user and group owner permission to `www-data`
 
 ```bash
 sudo chown -R www-data:www-data /var/www/magabwa
 ```
 
-6. Change the permission mode for `storage` and `bootstrap/cache` folder
+7. Change the permission mode for `storage` and `bootstrap/cache` folder
 
 ```bash
 sudo chmod -R 755 /var/www/magabwa/storage
